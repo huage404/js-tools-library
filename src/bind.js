@@ -8,7 +8,7 @@ import {call} from './call'
  * @returns {function(...[*]=)}
  */
 export function bind(Fn, obj, ...args){
-    return function (){
-        call(Fn, obj, ...args)
+    return function (...args2){
+        call(Fn, obj, ...args, ...args2)
     }
 }
